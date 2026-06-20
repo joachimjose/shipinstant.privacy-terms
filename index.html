@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShipInstant — Privacy Policy & Terms of Service</title>
+<meta name="description" content="ShipInstant Privacy Policy and Terms & Conditions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181B;
+    --ink-soft:#3C434B;
+    --navy-900:#0B1E38;
+    --navy-700:#16335C;
+    --navy-500:#2C4A73;
+    --steel-400:#6B7C93;
+    --line:#E2E4E8;
+    --line-soft:#ECEDEF;
+    --paper:#F7F8FA;
+    --card:#FFFFFF;
+    --amber-600:#C9701A;
+    --amber-700:#A85A12;
+    --amber-100:#FBE8D2;
+    --radius:10px;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.brand-name,.tab,.stop-label{font-family:'Space Grotesk',sans-serif;}
+
+  a{color:var(--navy-700);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber-600); outline-offset:2px;}
+
+  .todo{
+    background:var(--amber-100);
+    color:var(--amber-700);
+    padding:0 5px;
+    border-radius:5px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--navy-900);
+    color:#fff;
+    padding:28px 24px 36px;
+  }
+  .masthead-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand svg{flex:none; display:block;}
+  .brand-name{margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px;}
+  .brand-eyebrow{margin:2px 0 0; font-size:12.5px; color:#A9B7CC; letter-spacing:0.5px; text-transform:uppercase;}
+
+  .doc-stamps{display:flex; gap:8px; flex-wrap:wrap;}
+  .stamp{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.4px;
+    color:#CBD6E6;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:6px;
+    padding:6px 9px;
+    background:rgba(255,255,255,0.04);
+    white-space:nowrap;
+  }
+  .stamp strong{color:#fff; font-weight:600;}
+
+  .masthead-title{max-width:var(--max); margin:26px auto 0;}
+  .masthead-title h1{
+    font-size:clamp(26px,4vw,38px);
+    margin:0 0 10px;
+    font-weight:700;
+    letter-spacing:-0.3px;
+  }
+  .masthead-title p{
+    margin:0;
+    max-width:640px;
+    color:#C6D0DF;
+    font-size:15.5px;
+  }
+  .print-btn{
+    margin-top:18px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:7px;
+    cursor:pointer;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .print-btn:hover{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.45);}
+
+  /* ---------- Tab bar ---------- */
+  .tabbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(11,30,56,0.02);
+  }
+  .tabbar-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:0 24px;
+  }
+  .tab{
+    appearance:none;
+    background:none;
+    border:none;
+    border-bottom:2.5px solid transparent;
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--steel-400);
+    padding:16px 4px;
+    margin-right:22px;
+    cursor:pointer;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .tab:hover{color:var(--navy-700);}
+  .tab.active{color:var(--navy-900); border-bottom-color:var(--amber-600);}
+
+  .toc-toggle{
+    display:none;
+    margin-left:auto;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--navy-700);
+    padding:8px 12px;
+    cursor:pointer;
+  }
+  .mobile-toc{
+    display:none;
+    max-width:var(--max);
+    margin:0 auto;
+    padding:6px 24px 16px;
+    border-top:1px solid var(--line-soft);
+  }
+  .mobile-toc.open{display:block;}
+  .mobile-toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;}
+  .mobile-toc a{
+    display:block;
+    padding:9px 4px;
+    font-size:14px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--line-soft);
+  }
+
+  /* ---------- Layout ---------- */
+  .layout{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:40px 24px 80px;
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:48px;
+    align-items:start;
+  }
+
+  /* Route-line TOC: signature element */
+  .rail{position:sticky; top:73px; align-self:start;}
+  .route{list-style:none; margin:0; padding-left:26px; position:relative;}
+  .route::before{
+    content:'';
+    position:absolute;
+    left:7px; top:6px; bottom:6px;
+    width:2px;
+    background:repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
+  }
+  .route li{position:relative; margin-bottom:4px;}
+  .route a{
+    position:relative;
+    display:block;
+    padding:7px 0 7px 4px;
+    font-size:13.5px;
+    color:var(--steel-400);
+    text-decoration:none;
+    font-weight:500;
+    transition:color 0.15s ease;
+  }
+  .route a::before{
+    content:'';
+    position:absolute;
+    left:-26px; top:50%;
+    transform:translateY(-50%);
+    width:9px; height:9px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid var(--steel-400);
+    transition:background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .route a:hover{color:var(--navy-900);}
+  .route a.active{color:var(--navy-900); font-weight:600;}
+  .route a.active::before{
+    background:var(--amber-600);
+    border-color:var(--amber-600);
+    box-shadow:0 0 0 3px var(--amber-100);
+  }
+  .rail-note{
+    margin:18px 0 0 26px;
+    font-size:12px;
+    color:var(--steel-400);
+    line-height:1.5;
+    max-width:190px;
+  }
+
+  /* ---------- Document content ---------- */
+  .doc h2{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:var(--amber-700);
+    margin:0 0 6px;
+    font-weight:600;
+  }
+  .doc section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 28px;
+    margin-bottom:18px;
+    scroll-margin-top:90px;
+  }
+  .doc section h3{
+    font-size:19px;
+    margin:0 0 12px;
+    color:var(--navy-900);
+    font-weight:700;
+  }
+  .doc section h4{
+    font-size:14.5px;
+    margin:18px 0 8px;
+    color:var(--navy-700);
+    font-weight:700;
+  }
+  .doc p{margin:0 0 12px; color:var(--ink-soft); font-size:15px;}
+  .doc p:last-child{margin-bottom:0;}
+  .doc ul{margin:0 0 12px; padding-left:20px; color:var(--ink-soft); font-size:15px;}
+  .doc ul:last-child{margin-bottom:0;}
+  .doc li{margin-bottom:6px;}
+  .doc li:last-child{margin-bottom:0;}
+  .lede{
+    font-size:15.5px !important;
+    color:var(--navy-700) !important;
+  }
+
+  .intro-card{
+    background:linear-gradient(180deg, #fff, var(--paper));
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-900);
+    color:#A9B7CC;
+    padding:34px 24px;
+  }
+  .footer-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:13px;
+  }
+  .footer-inner a{color:#D7E0EC; text-decoration:underline;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;}
+    .rail{display:none;}
+    .toc-toggle{display:inline-block;}
+    .doc-stamps{gap:6px;}
+  }
+  @media (max-width:560px){
+    .masthead{padding:22px 18px 28px;}
+    .layout{padding:28px 18px 60px;}
+    .doc section{padding:20px 18px;}
+    .tabbar-inner{padding:0 18px;}
+    .mobile-toc{padding:6px 18px 16px;}
+    .footer-inner{padding:0;}
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .tabbar, .rail, .print-btn, footer, .toc-toggle, .mobile-toc{display:none !important;}
+    .masthead{background:#fff !important; color:#000 !important;}
+    .brand-eyebrow, .masthead-title p{color:#444 !important;}
+    .stamp{border-color:#999 !important; color:#333 !important;}
+    .stamp strong{color:#000 !important;}
+    .layout{grid-template-columns:1fr; padding:0;}
+    .doc[hidden]{display:none !important;}
+    .doc section{break-inside:avoid; border-color:#ccc;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <svg width="38" height="38" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <rect width="36" height="36" rx="9" fill="#15315A"/>
+        <path d="M9 24C9 24 9 14 18 14C27 14 27 24 27 24" stroke="#F7F8FA" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="27" cy="24" r="3" fill="#C9701A"/>
+        <circle cx="9" cy="24" r="2" fill="#F7F8FA"/>
+      </svg>
+      <div>
+        <p class="brand-name">ShipInstant</p>
+        <p class="brand-eyebrow">Legal Documents</p>
+      </div>
+    </div>
+    <div class="doc-stamps" id="docStamps">
+      <span class="stamp">DOC&nbsp;<strong id="stampDoc">SI-PRIV-001</strong></span>
+      <span class="stamp">VER&nbsp;<strong>1.0</strong></span>
+      <span class="stamp">EFFECTIVE&nbsp;<strong>20 JUN 2026</strong></span>
+    </div>
+  </div>
+  <div class="masthead-title">
+    <h1 id="pageTitle">Privacy Policy</h1>
+    <p id="pageSubtitle">How ShipInstant collects, uses, and protects your information across our website and mobile app.</p>
+    <button class="print-btn" onclick="window.print()" type="button">Print this document</button>
+  </div>
+</header>
+
+<nav class="tabbar" id="tabbar">
+  <div class="tabbar-inner">
+    <button class="tab active" data-doc="privacy" aria-selected="true">Privacy Policy</button>
+    <button class="tab" data-doc="terms" aria-selected="false">Terms & Conditions</button>
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false">Contents ▾</button>
+  </div>
+  <div class="mobile-toc" id="mobileToc">
+    <ol id="mobileTocList"></ol>
+  </div>
+</nav>
+
+<main class="layout">
+  <aside class="rail" id="rail">
+    <ol class="route" data-doc="privacy" id="routePrivacy">
+      <li><a href="#p-1">1. Introduction</a></li>
+      <li><a href="#p-2">2. Information we collect</a></li>
+      <li><a href="#p-3">3. How we use it</a></li>
+      <li><a href="#p-4">4. Payments — PayPal</a></li>
+      <li><a href="#p-5">5. How we share it</a></li>
+      <li><a href="#p-6">6. Storage & security</a></li>
+      <li><a href="#p-7">7. Data retention</a></li>
+      <li><a href="#p-8">8. Your rights</a></li>
+      <li><a href="#p-9">9. Cookies</a></li>
+      <li><a href="#p-10">10. Children's privacy</a></li>
+      <li><a href="#p-11">11. International transfers</a></li>
+      <li><a href="#p-12">12. Changes to this policy</a></li>
+      <li><a href="#p-13">13. Contact us</a></li>
+    </ol>
+    <ol class="route" data-doc="terms" id="routeTerms" hidden>
+      <li><a href="#t-1">1. Acceptance of terms</a></li>
+      <li><a href="#t-2">2. Description of service</a></li>
+      <li><a href="#t-3">3. Eligibility & accounts</a></li>
+      <li><a href="#t-4">4. Acceptable use</a></li>
+      <li><a href="#t-5">5. Shipments & prohibited items</a></li>
+      <li><a href="#t-6">6. Payments, fees & billing</a></li>
+      <li><a href="#t-7">7. Cancellations & refunds</a></li>
+      <li><a href="#t-8">8. Delivery & liability</a></li>
+      <li><a href="#t-9">9. Intellectual property</a></li>
+      <li><a href="#t-10">10. Third-party services</a></li>
+      <li><a href="#t-11">11. Disclaimers & liability limits</a></li>
+      <li><a href="#t-12">12. Indemnification</a></li>
+      <li><a href="#t-13">13. Termination</a></li>
+      <li><a href="#t-14">14. Governing law</a></li>
+      <li><a href="#t-15">15. Changes to these terms</a></li>
+      <li><a href="#t-16">16. Contact information</a></li>
+    </ol>
+    <p class="rail-note">Jump to any section. The highlighted stop tracks where you are in the document.</p>
+  </aside>
+
+  <!-- ===================== PRIVACY POLICY ===================== -->
+  <article class="doc" id="doc-privacy" data-doc="privacy">
+
+    <section id="p-1" class="intro-card">
+      <h2>Privacy Policy</h2>
+      <h3>1. Introduction</h3>
+      <p class="lede">ShipInstant ("ShipInstant," "we," "us," or "our") operates a logistics and shipping platform available through our website and mobile application (together, the "Service"). This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices available to you.</p>
+      <p>By creating an account or otherwise using the Service, you agree to the practices described in this policy. If you don't agree, please don't use the Service.</p>
+    </section>
+
+    <section id="p-2">
+      <h2>Privacy Policy</h2>
+      <h3>2. Information We Collect</h3>
+      <h4>Information you provide</h4>
+      <ul>
+        <li><strong>Account details</strong> — your full name, email address, and phone number when you register or update your profile.</li>
+        <li><strong>Shipment details</strong> — pickup and delivery addresses, recipient information, and package details you enter to create a shipment.</li>
+        <li><strong>Support communications</strong> — anything you share when you contact our support team.</li>
+      </ul>
+      <h4>Information collected automatically</h4>
+      <ul>
+        <li><strong>Usage data</strong> — pages and screens viewed, features used, and actions taken within the Service.</li>
+        <li><strong>Device and log data</strong> — device type, operating system, app version, IP address, and approximate location derived from your IP address.</li>
+        <li><strong>Cookies</strong> on our website, used to keep you signed in and understand how the site is used. See "Cookies" below.</li>
+      </ul>
+      <h4>Payment information</h4>
+      <p>We do <strong>not</strong> collect or store your payment card, bank, or PayPal account credentials. Payments are handled entirely by PayPal — see Section 4 below.</p>
+    </section>
+
+    <section id="p-3">
+      <h2>Privacy Policy</h2>
+      <h3>3. How We Use Your Information</h3>
+      <ul>
+        <li>To create and manage your account</li>
+        <li>To process and track shipments, and keep you updated on their status</li>
+        <li>To process payments through PayPal and send order confirmations or receipts</li>
+        <li>To respond to support requests</li>
+        <li>To send service-related notifications and, only with your consent, marketing communications</li>
+        <li>To detect, investigate, and prevent fraud, abuse, and security incidents</li>
+        <li>To comply with legal obligations and enforce our Terms & Conditions</li>
+        <li>To maintain and improve the reliability of the Service</li>
+      </ul>
+    </section>
+
+    <section id="p-4">
+      <h2>Privacy Policy</h2>
+      <h3>4. Payment Processing — PayPal</h3>
+      <p>All payments made through ShipInstant are processed by <strong>PayPal</strong> on the web. When you choose to pay, you're redirected to PayPal to complete the transaction securely on PayPal's own platform.</p>
+      <p>ShipInstant does not collect, transmit, or store your card number, bank account details, or PayPal login credentials — <strong>no payment data is saved within the ShipInstant app or on our servers</strong>. We may receive limited transaction confirmation data from PayPal, such as a transaction ID, payment status, and amount, which we use to confirm your order and maintain your shipment records.</p>
+      <p>Your relationship with PayPal regarding payment processing is governed separately by PayPal's own privacy policy and user agreement.</p>
+    </section>
+
+    <section id="p-5">
+      <h2>Privacy Policy</h2>
+      <h3>5. How We Share Your Information</h3>
+      <p>We share information only as needed to operate the Service:</p>
+      <ul>
+        <li><strong>PayPal</strong>, to process payments</li>
+        <li><strong>Couriers, carriers, and delivery partners</strong>, to fulfil and track your shipments</li>
+        <li><strong>Service providers</strong> who support hosting, analytics, customer support, and notifications, under confidentiality obligations</li>
+        <li><strong>Authorities or other third parties</strong>, where required by law, to enforce our Terms, or to protect the rights, safety, and property of ShipInstant, our users, or the public</li>
+        <li>In connection with a merger, acquisition, or sale of assets — we'll notify you if your information becomes subject to a different privacy policy</li>
+      </ul>
+      <p>We do not sell your personal information.</p>
+    </section>
+
+    <section id="p-6">
+      <h2>Privacy Policy</h2>
+      <h3>6. Data Storage & Security</h3>
+      <p>We use administrative, technical, and organizational measures designed to protect your information, including encryption in transit, access controls, and regular review of our systems. No method of transmission or storage is completely secure, and we can't guarantee absolute security.</p>
+    </section>
+
+    <section id="p-7">
+      <h2>Privacy Policy</h2>
+      <h3>7. Data Retention</h3>
+      <p>We retain your information for as long as your account is active and as needed to provide the Service, comply with legal obligations, resolve disputes, and enforce our agreements. You may request deletion of your account at any time, as described in Section 8.</p>
+    </section>
+
+    <section id="p-8">
+      <h2>Privacy Policy</h2>
+      <h3>8. Your Rights & Choices</h3>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li>Access the personal information we hold about you</li>
+        <li>Correct inaccurate information</li>
+        <li>Request deletion of your account and associated data</li>
+        <li>Object to or restrict certain processing</li>
+        <li>Withdraw consent for marketing communications at any time</li>
+      </ul>
+      <p>To exercise any of these rights, contact us using the details in Section 13. We may need to verify your identity before fulfilling a request.</p>
+    </section>
+
+    <section id="p-9">
+      <h2>Privacy Policy</h2>
+      <h3>9. Cookies</h3>
+      <p>Our website uses cookies and similar technologies to keep you signed in, remember your preferences, and understand how visitors use our site. You can control cookies through your browser settings; disabling them may affect some features of the website.</p>
+    </section>
+
+    <section id="p-10">
+      <h2>Privacy Policy</h2>
+      <h3>10. Children's Privacy</h3>
+      <p>The Service is not directed to children under 16, and we don't knowingly collect personal information from them. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+    </section>
+
+    <section id="p-11">
+      <h2>Privacy Policy</h2>
+      <h3>11. International Data Transfers</h3>
+      <p>Your information may be processed in countries other than the one you live in. Where required, we put appropriate safeguards in place for these transfers in line with applicable data protection law.</p>
+    </section>
+
+    <section id="p-12">
+      <h2>Privacy Policy</h2>
+      <h3>12. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. We'll update the "Effective" date shown at the top of this page and, for material changes, provide additional notice — such as an in-app notification or email.</p>
+    </section>
+
+    <section id="p-13">
+      <h2>Privacy Policy</h2>
+      <h3>13. Contact Us</h3>
+      <p>Questions about this Privacy Policy or your information can be sent to <span class="todo">[privacy@shipinstant.app]</span> or to <span class="todo">[Registered company name and address]</span>.</p>
+    </section>
+
+  </article>
+
+  <!-- ===================== TERMS & CONDITIONS ===================== -->
+  <article class="doc" id="doc-terms" data-doc="terms" hidden>
+
+    <section id="t-1" class="intro-card">
+      <h2>Terms & Conditions</h2>
+      <h3>1. Acceptance of Terms</h3>
+      <p class="lede">These Terms & Conditions ("Terms") form a binding agreement between you and ShipInstant ("we," "us") governing your access to and use of our website and mobile application (the "Service").</p>
+      <p>By creating an account or using the Service, you agree to these Terms. If you don't agree, please don't use the Service.</p>
+    </section>
+
+    <section id="t-2">
+      <h2>Terms & Conditions</h2>
+      <h3>2. Description of Service</h3>
+      <p>ShipInstant is a logistics platform that lets users create, pay for, and track shipments, connecting senders with delivery and courier partners. Features and coverage may change or expand over time, and we may add, modify, or discontinue parts of the Service at our discretion.</p>
+    </section>
+
+    <section id="t-3">
+      <h2>Terms & Conditions</h2>
+      <h3>3. Eligibility & Account Registration</h3>
+      <p>You must be at least 18 years old, or the age of majority in your jurisdiction, to create an account. When you register, you agree to provide an accurate name, email, and phone number, to keep this information up to date, and to keep your login credentials confidential. You're responsible for all activity that happens under your account.</p>
+    </section>
+
+    <section id="t-4">
+      <h2>Terms & Conditions</h2>
+      <h3>4. User Responsibilities & Acceptable Use</h3>
+      <p>You agree to use the Service only for lawful purposes and not to:</p>
+      <ul>
+        <li>Impersonate any person or misrepresent your affiliation with any person or entity</li>
+        <li>Interfere with or disrupt the Service or its underlying infrastructure</li>
+        <li>Attempt to gain unauthorized access to other accounts or systems</li>
+        <li>Use the Service to ship prohibited or illegal items (see Section 5)</li>
+        <li>Use the Service in any way that violates applicable law</li>
+      </ul>
+    </section>
+
+    <section id="t-5">
+      <h2>Terms & Conditions</h2>
+      <h3>5. Shipments & Prohibited Items</h3>
+      <p>You're responsible for the accuracy of your shipment details — addresses, recipient information, and package contents — and for ensuring your shipments comply with applicable customs, import/export, and carrier rules. You may not ship illegal goods, hazardous materials, counterfeit items, or anything prohibited by our carrier partners' policies.</p>
+      <p>We reserve the right to refuse, hold, or cancel any shipment that violates these Terms or applicable law.</p>
+    </section>
+
+    <section id="t-6">
+      <h2>Terms & Conditions</h2>
+      <h3>6. Payments, Fees & Billing</h3>
+      <p>Shipping fees and any applicable charges are displayed before you confirm an order. Payments are processed by <strong>PayPal</strong> on the web; by choosing to pay, you also agree to PayPal's user agreement and privacy policy.</p>
+      <p>We do not collect or store your card, bank, or PayPal credentials, and <strong>no payment data is saved within the ShipInstant app</strong>. Prices may include or exclude taxes and duties depending on your location and shipment; you're responsible for any applicable duties, taxes, or customs fees not collected at checkout.</p>
+    </section>
+
+    <section id="t-7">
+      <h2>Terms & Conditions</h2>
+      <h3>7. Cancellations & Refunds</h3>
+      <p>You may cancel a shipment before it's picked up by a courier, subject to any cancellation window shown at checkout. Refunds, where applicable, are issued to your original PayPal payment method and may take a number of business days to appear, depending on PayPal's processing times.</p>
+      <p class="todo" style="display:inline-block;">[Add your specific cancellation window and refund policy here.]</p>
+    </section>
+
+    <section id="t-8">
+      <h2>Terms & Conditions</h2>
+      <h3>8. Delivery Timeframes & Liability</h3>
+      <p>Delivery estimates are estimates, not guarantees, and can be affected by customs, weather, courier capacity, and other factors outside our control. While we work with reputable courier and delivery partners, ShipInstant acts as an intermediary connecting you with these partners, and our liability for lost, delayed, or damaged shipments is limited as described in Section 11 and any applicable carrier terms. We recommend obtaining shipping insurance for high-value items where available.</p>
+    </section>
+
+    <section id="t-9">
+      <h2>Terms & Conditions</h2>
+      <h3>9. Intellectual Property</h3>
+      <p>The Service, including its design, text, graphics, logos, and software, is owned by ShipInstant or our licensors and is protected by intellectual property laws. We grant you a limited, non-exclusive, non-transferable license to use the Service for its intended purpose. You may not copy, modify, distribute, or reverse-engineer any part of the Service without our written permission.</p>
+    </section>
+
+    <section id="t-10">
+      <h2>Terms & Conditions</h2>
+      <h3>10. Third-Party Services</h3>
+      <p>The Service relies on third-party services, including PayPal for payments and various courier and mapping providers. Your use of these third-party services may be subject to their own terms and privacy policies, which we encourage you to review. We're not responsible for the acts or omissions of third-party providers.</p>
+    </section>
+
+    <section id="t-11">
+      <h2>Terms & Conditions</h2>
+      <h3>11. Disclaimers & Limitation of Liability</h3>
+      <p>The Service is provided "as is" and "as available," without warranties of any kind, express or implied. To the maximum extent permitted by law, ShipInstant will not be liable for indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, data, or goodwill arising from your use of the Service.</p>
+      <p>Our total liability for any claim relating to the Service is limited to the amount you paid us for the shipment giving rise to the claim in the <span class="todo">[three (3)]</span> months before the claim arose.</p>
+    </section>
+
+    <section id="t-12">
+      <h2>Terms & Conditions</h2>
+      <h3>12. Indemnification</h3>
+      <p>You agree to indemnify and hold ShipInstant, its officers, employees, and partners harmless from any claims, damages, or expenses (including reasonable legal fees) arising from your use of the Service, your shipments, or your violation of these Terms.</p>
+    </section>
+
+    <section id="t-13">
+      <h2>Terms & Conditions</h2>
+      <h3>13. Termination & Suspension</h3>
+      <p>We may suspend or terminate your account if you violate these Terms, engage in fraudulent or illegal activity, or for any reason with reasonable notice. You may close your account at any time by contacting support. Sections that by their nature should survive termination — including Sections 9, 11, and 12 — will continue to apply.</p>
+    </section>
+
+    <section id="t-14">
+      <h2>Terms & Conditions</h2>
+      <h3>14. Governing Law & Dispute Resolution</h3>
+      <p>These Terms are governed by the laws of <span class="todo">[Your Country / State]</span>, without regard to its conflict of law principles. Any dispute arising from these Terms or the Service will be resolved in the courts of <span class="todo">[Your Jurisdiction]</span>, unless otherwise required by applicable law.</p>
+    </section>
+
+    <section id="t-15">
+      <h2>Terms & Conditions</h2>
+      <h3>15. Changes to These Terms</h3>
+      <p>We may update these Terms from time to time. We'll update the "Effective" date shown at the top of this page and, for material changes, provide additional notice. Continuing to use the Service after changes take effect means you accept the updated Terms.</p>
+    </section>
+
+    <section id="t-16">
+      <h2>Terms & Conditions</h2>
+      <h3>16. Contact Information</h3>
+      <p>Questions about these Terms can be sent to <span class="todo">[support@shipinstant.app]</span> or to <span class="todo">[Registered company name and address]</span>.</p>
+    </section>
+
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year">2026</span> ShipInstant. All rights reserved.</span>
+    <span>Last updated 20 June 2026 · <a href="#p-1" id="footerPrivacyLink">Privacy Policy</a> · <a href="#t-1" id="footerTermsLink">Terms & Conditions</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var docMeta = {
+    privacy: { title: "Privacy Policy", subtitle: "How ShipInstant collects, uses, and protects your information across our website and mobile app.", doc: "SI-PRIV-001" },
+    terms:   { title: "Terms & Conditions", subtitle: "The terms that govern your use of ShipInstant's website and mobile app, including payments and shipments.", doc: "SI-TOS-001" }
+  };
+
+  var tabs = document.querySelectorAll('.tab');
+  var docs = document.querySelectorAll('.doc');
+  var routes = document.querySelectorAll('.route');
+  var stampDoc = document.getElementById('stampDoc');
+  var pageTitle = document.getElementById('pageTitle');
+  var pageSubtitle = document.getElementById('pageSubtitle');
+  var mobileTocList = document.getElementById('mobileTocList');
+  var mobileToc = document.getElementById('mobileToc');
+  var tocToggle = document.getElementById('tocToggle');
+
+  var current = 'privacy';
+  var observer;
+
+  function buildMobileToc(name){
+    var source = document.getElementById(name === 'privacy' ? 'routePrivacy' : 'routeTerms');
+    mobileTocList.innerHTML = source.innerHTML;
+  }
+
+  function setupObserver(name){
+    if(observer) observer.disconnect();
+    var sections = document.querySelectorAll('#doc-' + name + ' section');
+    var links = document.querySelectorAll('.route[data-doc="' + name + '"] a');
+
+    observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          var match = document.querySelector('.route[data-doc="' + name + '"] a[href="#' + entry.target.id + '"]');
+          if(match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(function(s){ observer.observe(s); });
+  }
+
+  function switchDoc(name){
+    current = name;
+    tabs.forEach(function(t){
+      var active = t.getAttribute('data-doc') === name;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    docs.forEach(function(d){ d.hidden = d.getAttribute('data-doc') !== name; });
+    routes.forEach(function(r){ r.hidden = r.getAttribute('data-doc') !== name; });
+
+    stampDoc.textContent = docMeta[name].doc;
+    pageTitle.textContent = docMeta[name].title;
+    pageSubtitle.textContent = docMeta[name].subtitle;
+
+    buildMobileToc(name);
+    setupObserver(name);
+    mobileToc.classList.remove('open');
+    tocToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      switchDoc(t.getAttribute('data-doc'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  tocToggle.addEventListener('click', function(){
+    var open = mobileToc.classList.toggle('open');
+    tocToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  mobileTocList.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      mobileToc.classList.remove('open');
+      tocToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.getElementById('footerPrivacyLink').addEventListener('click', function(e){
+    if(current !== 'privacy'){ e.preventDefault(); switchDoc('privacy'); document.getElementById('p-1').scrollIntoView({behavior:'smooth'}); }
+  });
+  document.getElementById('footerTermsLink').addEventListener('click', function(e){
+    if(current !== 'terms'){ e.preventDefault(); switchDoc('terms'); document.getElementById('t-1').scrollIntoView({behavior:'smooth'}); }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  buildMobileToc('privacy');
+  setupObserver('privacy');
+})();
+</script>
+
+</body>
+</html>

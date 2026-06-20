@@ -10,19 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14181B;
-    --ink-soft:#3C434B;
-    --navy-900:#0B1E38;
-    --navy-700:#16335C;
-    --navy-500:#2C4A73;
-    --steel-400:#6B7C93;
-    --line:#E2E4E8;
-    --line-soft:#ECEDEF;
-    --paper:#F7F8FA;
+    --ink:#000000;
+    --ink-soft:#555555;
+    --steel-400:#888888;
+    --line:#E9E9E9;
+    --line-soft:#F2F2F2;
+    --paper:#FAFAFA;
     --card:#FFFFFF;
-    --amber-600:#C9701A;
-    --amber-700:#A85A12;
-    --amber-100:#FBE8D2;
+    --yellow:#FFEA00;
+    --yellow-dim:rgba(255,234,0,0.15);
+    --yellow-border:rgba(255,234,0,0.4);
+    --black-soft:rgba(0,0,0,0.08);
     --radius:10px;
     --max:1180px;
   }
@@ -46,12 +44,14 @@
 
   h1,h2,h3,.brand-name,.tab,.stop-label{font-family:'Space Grotesk',sans-serif;}
 
-  a{color:var(--navy-700);}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--amber-600); outline-offset:2px;}
+  a{color:var(--ink); text-decoration:underline; text-decoration-color:var(--yellow-border); text-underline-offset:2px;}
+  a:hover{background:var(--yellow-dim);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--yellow); outline-offset:2px;}
 
   .todo{
-    background:var(--amber-100);
-    color:var(--amber-700);
+    background:var(--yellow-dim);
+    color:var(--ink);
+    border:1px solid var(--yellow-border);
     padding:0 5px;
     border-radius:5px;
     font-weight:600;
@@ -60,7 +60,7 @@
 
   /* ---------- Masthead ---------- */
   .masthead{
-    background:var(--navy-900);
+    background:var(--ink);
     color:#fff;
     padding:28px 24px 36px;
   }
@@ -76,21 +76,21 @@
   .brand{display:flex; align-items:center; gap:12px;}
   .brand svg{flex:none; display:block;}
   .brand-name{margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px;}
-  .brand-eyebrow{margin:2px 0 0; font-size:12.5px; color:#A9B7CC; letter-spacing:0.5px; text-transform:uppercase;}
+  .brand-eyebrow{margin:2px 0 0; font-size:12.5px; color:rgba(255,255,255,0.55); letter-spacing:0.5px; text-transform:uppercase;}
 
   .doc-stamps{display:flex; gap:8px; flex-wrap:wrap;}
   .stamp{
     font-family:'IBM Plex Mono',monospace;
     font-size:11px;
     letter-spacing:0.4px;
-    color:#CBD6E6;
-    border:1px solid rgba(255,255,255,0.18);
+    color:rgba(255,255,255,0.6);
+    border:1px solid var(--yellow-border);
     border-radius:6px;
     padding:6px 9px;
-    background:rgba(255,255,255,0.04);
+    background:var(--yellow-dim);
     white-space:nowrap;
   }
-  .stamp strong{color:#fff; font-weight:600;}
+  .stamp strong{color:var(--yellow); font-weight:600;}
 
   .masthead-title{max-width:var(--max); margin:26px auto 0;}
   .masthead-title h1{
@@ -102,13 +102,13 @@
   .masthead-title p{
     margin:0;
     max-width:640px;
-    color:#C6D0DF;
+    color:rgba(255,255,255,0.7);
     font-size:15.5px;
   }
-  .print-btn{
-    margin-top:18px;
+  .masthead-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+  .print-btn, .contact-btn{
     background:transparent;
-    border:1px solid rgba(255,255,255,0.28);
+    border:1px solid var(--yellow-border);
     color:#fff;
     font-family:'Inter',sans-serif;
     font-size:13px;
@@ -116,9 +116,11 @@
     padding:8px 14px;
     border-radius:7px;
     cursor:pointer;
-    transition:background 0.15s ease, border-color 0.15s ease;
+    text-decoration:none;
+    display:inline-block;
+    transition:background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
-  .print-btn:hover{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.45);}
+  .print-btn:hover, .contact-btn:hover{background:var(--yellow); border-color:var(--yellow); color:#000;}
 
   /* ---------- Tab bar ---------- */
   .tabbar{
@@ -150,8 +152,8 @@
     cursor:pointer;
     transition:color 0.15s ease, border-color 0.15s ease;
   }
-  .tab:hover{color:var(--navy-700);}
-  .tab.active{color:var(--navy-900); border-bottom-color:var(--amber-600);}
+  .tab:hover{color:var(--ink);}
+  .tab.active{color:var(--ink); border-bottom-color:var(--yellow);}
 
   .toc-toggle{
     display:none;
@@ -161,7 +163,7 @@
     border-radius:7px;
     font-size:13px;
     font-weight:600;
-    color:var(--navy-700);
+    color:var(--ink);
     padding:8px 12px;
     cursor:pointer;
   }
@@ -226,12 +228,12 @@
     border:2px solid var(--steel-400);
     transition:background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   }
-  .route a:hover{color:var(--navy-900);}
-  .route a.active{color:var(--navy-900); font-weight:600;}
+  .route a:hover{color:var(--ink);}
+  .route a.active{color:var(--ink); font-weight:600;}
   .route a.active::before{
-    background:var(--amber-600);
-    border-color:var(--amber-600);
-    box-shadow:0 0 0 3px var(--amber-100);
+    background:var(--yellow);
+    border-color:var(--ink);
+    box-shadow:0 0 0 3px var(--black-soft);
   }
   .rail-note{
     margin:18px 0 0 26px;
@@ -246,9 +248,19 @@
     font-size:13px;
     text-transform:uppercase;
     letter-spacing:0.6px;
-    color:var(--amber-700);
+    color:var(--ink);
     margin:0 0 6px;
-    font-weight:600;
+    font-weight:700;
+  }
+  .doc h2::before{
+    content:'';
+    display:inline-block;
+    width:8px; height:8px;
+    background:var(--yellow);
+    border:1px solid var(--ink);
+    border-radius:2px;
+    margin-right:8px;
+    vertical-align:middle;
   }
   .doc section{
     background:var(--card);
@@ -261,13 +273,13 @@
   .doc section h3{
     font-size:19px;
     margin:0 0 12px;
-    color:var(--navy-900);
+    color:var(--ink);
     font-weight:700;
   }
   .doc section h4{
     font-size:14.5px;
     margin:18px 0 8px;
-    color:var(--navy-700);
+    color:var(--ink);
     font-weight:700;
   }
   .doc p{margin:0 0 12px; color:var(--ink-soft); font-size:15px;}
@@ -278,7 +290,7 @@
   .doc li:last-child{margin-bottom:0;}
   .lede{
     font-size:15.5px !important;
-    color:var(--navy-700) !important;
+    color:var(--ink) !important;
   }
 
   .intro-card{
@@ -416,7 +428,7 @@
     <section id="p-1" class="intro-card">
       <h2>Privacy Policy</h2>
       <h3>1. Introduction</h3>
-      <p class="lede">ShipInstant ("ShipInstant," "we," "us," or "our") operates a logistics and shipping platform available through our website and mobile application (together, the "Service"). This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices available to you.</p>
+      <p class="lede">ShipInstant  operates a logistics and shipping platform available through our website and mobile application (together, the "Service"). This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices available to you.</p>
       <p>By creating an account or otherwise using the Service, you agree to the practices described in this policy. If you don't agree, please don't use the Service.</p>
     </section>
 
@@ -529,7 +541,7 @@
     <section id="p-13">
       <h2>Privacy Policy</h2>
       <h3>13. Contact Us</h3>
-      <p>Questions about this Privacy Policy or your information can be sent to <span class="todo">[privacy@shipinstant.app]</span> or to <span class="todo">[Registered company name and address]</span>.</p>
+      <p>Questions about this Privacy Policy or your information can be sent to <span class="todo">https://forms.gle/S1BWxQ5uUxxkK5U1A</span> .</p>
     </section>
 
   </article>
@@ -612,7 +624,7 @@
       <h2>Terms & Conditions</h2>
       <h3>11. Disclaimers & Limitation of Liability</h3>
       <p>The Service is provided "as is" and "as available," without warranties of any kind, express or implied. To the maximum extent permitted by law, ShipInstant will not be liable for indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, data, or goodwill arising from your use of the Service.</p>
-      <p>Our total liability for any claim relating to the Service is limited to the amount you paid us for the shipment giving rise to the claim in the <span class="todo">[three (3)]</span> months before the claim arose.</p>
+      <p>Our total liability for any claim relating to the Service is limited to the amount you paid us for the shipment giving rise to the claim in the <span class="todo">3</span> months before the claim arose.</p>
     </section>
 
     <section id="t-12">
@@ -630,7 +642,7 @@
     <section id="t-14">
       <h2>Terms & Conditions</h2>
       <h3>14. Governing Law & Dispute Resolution</h3>
-      <p>These Terms are governed by the laws of <span class="todo">[Your Country / State]</span>, without regard to its conflict of law principles. Any dispute arising from these Terms or the Service will be resolved in the courts of <span class="todo">[Your Jurisdiction]</span>, unless otherwise required by applicable law.</p>
+      <p>These Terms are governed by the laws of <span class="todo">China Guangdong Foshan</span>, without regard to its conflict of law principles. Any dispute arising from these Terms or the Service will be resolved in the courts of <span class="todo">Foshan</span>, unless otherwise required by applicable law.</p>
     </section>
 
     <section id="t-15">
@@ -642,7 +654,7 @@
     <section id="t-16">
       <h2>Terms & Conditions</h2>
       <h3>16. Contact Information</h3>
-      <p>Questions about these Terms can be sent to <span class="todo">[support@shipinstant.app]</span> or to <span class="todo">[Registered company name and address]</span>.</p>
+      <p>Questions about these Terms can be sent to <span class="todo">https://forms.gle/S1BWxQ5uUxxkK5U1A</span> </p>
     </section>
 
   </article>
